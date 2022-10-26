@@ -1,0 +1,27 @@
+{
+  "name": "laughing-umbrella",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dberry38/laughing-umbrella.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dberry38/laughing-umbrella/issues"
+  },
+  "homepage": "https://github.com/dberry38/laughing-umbrella#readme",
+  "devDependencies": {
+    "jest": "^29.2.2"
+  }
+}
