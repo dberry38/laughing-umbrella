@@ -1,2 +1,14 @@
 const inquirer = require('inquirer');
-const
+
+
+
+
+
+inquirer
+.prompt([
+    {
+        type: 'input',
+        name: 'name',
+        message: 'what is going on?',
+    },
+])
