@@ -5,25 +5,25 @@ describe("Intern", () => {
     it("should create an object with the keys 'name', 'id', 'email', and 'school' with values passed from the parameters in a 'new Intern' call.", () => {
       const intern = new Intern(
         "Jim",
-        001,
+        "001",
         "fakejake@hello.com",
         "UW"
       );
 
       expect(intern.name).toBe("Jim");
-      expect(intern.id).toBe(001);
+      expect(intern.id).toBe("001");
       expect(intern.email).toBe("fakejake@hello.com");
-      expect(intern.github).toBe("UW");
+      expect(intern.school).toBe("UW");
     });
   });
 
   describe("getinternInfo", () => {
     it("should return Intern's name, id, email, school, and role.", () => {
-      const intern = new intern(
+      const intern = new Intern(
         "John",
-        025,
+        "025",
         "nospamhere@wahoo.org",
-        "gitUser"
+        "UW"
       );
 
       expect(intern.getName()).toEqual(expect.stringContaining("John"));
