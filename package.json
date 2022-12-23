@@ -23,5 +23,8 @@
   "homepage": "https://github.com/dberry38/laughing-umbrella#readme",
   "devDependencies": {
     "jest": "^29.2.2"
+  },
+  "dependencies": {
+    "inquirer": "^9.1.4"
   }
 }
