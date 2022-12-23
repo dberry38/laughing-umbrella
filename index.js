@@ -5,7 +5,7 @@ const fs = require('fs')
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const { managerQuestions, internQuestions, engineerQuestions } = require('./utils/questions');
+const { managerQuestions, internQuestions, engineerQuestions } = require('./src/helper');
 
 const managerInfo = () => {
   //prompts Manager questions
@@ -72,7 +72,7 @@ const internInfo = () => {
           generateOrNot(anotherTeammate)
       })
 }
-//this takes the answer to the question asked at the end of adding every memeber and decides what to do.
+//this takes the answer to the question asked at the end of adding every member and decides what to do.
 const generateOrNot = (anotherTeammate) => {
   if (anotherTeammate === 'Engineer'){
       engineerInfo();
@@ -105,7 +105,7 @@ const writeHTML = () => {
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-light justify-content-center" style="background-color: coral;">
+  <nav class="navbar sticky-top navbar-light justify-content-center" style="background-color: rgb(48, 217, 155);">
       <h1 class="navbar-text text-body">Our Team</h1>
   </nav>
   <div class="container d-flex flex-wrap p-4">
@@ -116,11 +116,20 @@ const writeHTML = () => {
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>`
-
 }
 
+const infoOptions = (role) => {
+    if (role === Manager) {
+        return `Office Number`;
+    } else if (role === Engineer) {
+        return `Github`;
+    } else {
+        return `School`;
+    }
+};
+
 // runs through everything in the array in order to create cards to append to the HTML file
-const writeCards = () =>{
+const writeCards = () => {
   let html = ``;
   employeeArr.map(employee => {
       const { name, role, id, extraInfo, email } = employee
@@ -128,13 +137,13 @@ const writeCards = () =>{
        `
       <div class="card m-4 shadow-lg" style="width: 18rem;">
           <div class="card-header bg-warning">
-              ${name}
-              ${role}
+              <div>${name}</div>
+              <div>${role}</div>
           </div>
           <div class="card-body">
-              ${id}
-              ${extraInfo}
-              ${email}
+          <div>Employee ID: ${id}</div>
+          <div>${infoOptions(role)}: ${extraInfo}</div>
+          <div>Email: ${email}</div>
           </div>
       </div>`
   });    
