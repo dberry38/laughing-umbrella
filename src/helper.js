@@ -104,7 +104,7 @@ const managerQuestions = [
     {
         type: 'input',
         name: 'github',
-        message: "What's the engineer's github?",
+        message: "What's the engineer's github username?",
         validate: githubInput => {
             if (githubInput) {
                 return true;

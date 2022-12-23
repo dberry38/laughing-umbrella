@@ -118,13 +118,13 @@ const writeHTML = () => {
 </html>`
 }
 
-const infoOptions = (role) => {
-    if (role === Manager) {
-        return `Office Number`;
-    } else if (role === Engineer) {
-        return `Github`;
+const infoOptions = (role, extraInfo) => {
+    if (role === "Manager") {
+        return `Office Number: ${extraInfo}`;
+    } else if (role === "Engineer") {
+        return `Github: <a href="github.com/${extraInfo}">${extraInfo}</a>`;
     } else {
-        return `School`;
+        return `School: ${extraInfo}`;
     }
 };
 
@@ -137,12 +137,12 @@ const writeCards = () => {
        `
       <div class="card m-4 shadow-lg" style="width: 18rem;">
           <div class="card-header bg-warning">
-              <div>${name}</div>
+              <h2>${name}</h2>
               <div>${role}</div>
           </div>
           <div class="card-body">
           <div>Employee ID: ${id}</div>
-          <div>${infoOptions(role)}: ${extraInfo}</div>
+          <div>${infoOptions(role, extraInfo)}</div>
           <div>Email: ${email}</div>
           </div>
       </div>`
