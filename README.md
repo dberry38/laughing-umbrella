@@ -13,7 +13,7 @@ Simply clone this repository to your local machine, navigate to the direcrory in
 After starting the application, you will be prompted with several questions. After correctly entering all the necessary information, an index.html file will be generated for viewing.
 
 ## Demonstration
-![Demonstration](dist/assets/laughing-demonstration.gif)
+[Demonstration video](https://drive.google.com/file/d/1GQymyLwYNheS3yJQXHatB3Zp3NT5ChVO/view)
 
 ## Credits
 Thanks to the fantastic people representing AskBCS for all their help.
